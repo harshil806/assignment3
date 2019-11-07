@@ -1,0 +1,38 @@
+<mvc:View controllerName="test_formatter1.demo_formatter1.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Table id="table1" items="{data>/table}">
+							<columns>
+								<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true" width="15%">
+									<Text text="EmpId"></Text>
+								</Column>
+									<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true" >
+									<Text text="Name"></Text>
+								</Column>
+									<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true" >
+									<Text text="Date"></Text>
+								</Column>
+									<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true" >
+									<Text text="Lang"></Text>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="{data>EmpId}" wrapping="true"></Text>
+										<Text text="{data>Name}" wrapping="true"></Text>
+										<Text text="{path : 'data>Date', formatter :'.test.fnOnFormatDate'}" wrapping="true"></Text>
+										<Text text="{path :'data>Lang',formatter : '.test.fnReturnLang'}" wrapping="true"></Text>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
